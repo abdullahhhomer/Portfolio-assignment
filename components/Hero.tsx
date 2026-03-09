@@ -264,7 +264,7 @@ export default function Hero() {
 
       <div style={{
         position: 'relative', zIndex: 1, textAlign: 'center',
-        padding: '0 40px', maxWidth: '900px',
+        padding: '0 20px', maxWidth: '900px',
         transform: mounted ? 'translateY(0)' : 'translateY(30px)',
         opacity: mounted ? 1 : 0,
         transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',

@@ -155,3 +155,41 @@ section { padding: 100px 0; }
 }
 
 .btn-primary:hover::before { transform: translateX(0); }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+  
+  .cursor, .cursor-ring {
+    display: none !important;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: clamp(1.6rem, 6vw, 2.5rem);
+  }
+  
+  .tag {
+    font-size: 0.6rem;
+  }
+  
+  .btn-primary {
+    padding: 12px 24px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

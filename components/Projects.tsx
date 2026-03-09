@@ -294,7 +294,7 @@ export default function Projects() {
         opacity: 0.3,
       }} />
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }} ref={ref}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }} ref={ref}>
         {/* Header */}
         <div style={{
           display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px',

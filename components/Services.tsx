@@ -216,7 +216,7 @@ export default function Services() {
 
   return (
     <section id="services" style={{ padding: '120px 0', background: 'var(--bg-900)', position: 'relative' }} className="grid-bg">
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }} ref={ref}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }} ref={ref}>
         {/* Header */}
         <div style={{
           display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px',

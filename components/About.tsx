@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, ReactNode } from 'react'
 
 const skills = [
   { category: 'Development', items: ['React / Next.js', 'Node.js', 'TypeScript', 'Python', 'REST APIs', 'SQL / NoSQL'] },
@@ -8,11 +8,49 @@ const skills = [
   { category: 'Design & Tools', items: ['Figma / UI/UX', 'Tailwind CSS', 'Framer Motion', 'Git / GitHub', 'Vercel / AWS', 'Docker'] },
 ]
 
-const strengths = [
-  { icon: '◇', title: 'Fast Delivery', desc: 'Agile workflow with transparent communication and on-time delivery.' },
-  { icon: '◈', title: 'Results-Driven', desc: 'Every solution is measured against real business KPIs and outcomes.' },
-  { icon: '◆', title: 'Reliable & Secure', desc: 'Security-first approach with clean, maintainable code architecture.' },
-  { icon: '◉', title: 'Scalable Solutions', desc: 'Built to grow — your digital infrastructure scales with your business.' },
+function ZapIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+    </svg>
+  )
+}
+
+function TargetIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <circle cx="12" cy="12" r="6"/>
+      <circle cx="12" cy="12" r="2"/>
+    </svg>
+  )
+}
+
+function ShieldIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <path d="M9 12l2 2 4-4"/>
+    </svg>
+  )
+}
+
+function RocketIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+      <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+    </svg>
+  )
+}
+
+const strengths: { icon: ReactNode; title: string; desc: string }[] = [
+  { icon: <ZapIcon />, title: 'Fast Delivery', desc: 'Agile workflow with transparent communication and on-time delivery.' },
+  { icon: <TargetIcon />, title: 'Results-Driven', desc: 'Every solution is measured against real business KPIs and outcomes.' },
+  { icon: <ShieldIcon />, title: 'Reliable & Secure', desc: 'Security-first approach with clean, maintainable code architecture.' },
+  { icon: <RocketIcon />, title: 'Scalable Solutions', desc: 'Built to grow — your digital infrastructure scales with your business.' },
 ]
 
 function SkillBar({ skill, delay }: { skill: string; delay: number }) {
@@ -74,7 +112,7 @@ export default function About() {
         opacity: 0.3,
       }} />
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }} ref={ref}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }} ref={ref}>
         {/* Header */}
         <div style={{
           display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '80px',
@@ -103,7 +141,7 @@ export default function About() {
 
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '20px', fontSize: '1rem' }}>
               {/* EDIT: Replace [Your Name] and [Your City] with your info */}
-              Hi, I&apos;m Abdullah Omer - a passionate tech solutions provider based in Islamabad , Pakitsan. 
+              Hi, I&apos;m Abdullah Omer — a passionate tech solutions provider based in Islamabad, Pakistan. 
               With a strong foundation in web development and digital marketing, I help businesses 
               establish a powerful online presence that converts visitors into loyal customers.
             </p>
@@ -132,7 +170,7 @@ export default function About() {
                     ;(e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'
                   }}
                 >
-                  <span style={{ fontSize: '1.2rem', display: 'block', marginBottom: '8px', color: 'var(--neon)', textShadow: '0 0 10px rgba(0,212,255,0.4)' }}>{icon}</span>
+                  <span style={{ display: 'flex', marginBottom: '12px', color: 'var(--neon)', filter: 'drop-shadow(0 0 6px rgba(0,212,255,0.5))' }}>{icon}</span>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.75rem', fontWeight: 700, marginBottom: '6px', letterSpacing: '0.05em' }}>{title}</div>
                   <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{desc}</div>
                 </div>
