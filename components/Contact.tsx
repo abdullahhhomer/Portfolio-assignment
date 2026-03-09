@@ -110,7 +110,7 @@ export default function Contact() {
           opacity: visible ? 1 : 0,
           transition: 'all 0.8s ease',
         }}>
-          <span className="tag">05 — Contact</span>
+          <span className="tag">07 — Contact</span>
           <div style={{ flex: 1, height: '1px', background: 'rgba(0,212,255,0.15)' }} />
         </div>
 
